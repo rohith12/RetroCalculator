@@ -85,7 +85,11 @@ class ViewController: UIViewController {
         switch oper{
         case "add" : return String(num1 + num2)
         case "sub" : return String(num1 - num2)
-        case "div" : return String(num1 / num2)
+        case "div" :  if num2 == 0{
+                        return "0"
+                      }else{
+                        return String(num1 / num2)
+                      }
         case "mul" : return String(num1 * num2)
         default : return ""
         }
@@ -98,8 +102,8 @@ class ViewController: UIViewController {
          number = 0
          operation = ""
          res = 0
-        num2 = 0
-        counterLbl.text = "0"
+         num2 = 0
+         counterLbl.text = "0"
         
         
     }
