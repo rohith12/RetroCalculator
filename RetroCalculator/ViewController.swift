@@ -14,8 +14,8 @@ class ViewController: UIViewController {
     var runningNumber = ""
     var operation = ""
     var res = "0"
-    var num2 = ""
-    var num1 = ""
+    var rightNum = ""
+    var leftNum = ""
     var btnSound:AVAudioPlayer!
     
     
@@ -40,26 +40,29 @@ class ViewController: UIViewController {
         playSound()
         
         if sender.tag == 50 || sender.tag == 60 || sender.tag == 70 || sender.tag == 80{
+            // Used for operations
             if operation == ""{
+                //If operation is empty assigns a operation
               decideOperation(sender.tag)
             }else{
-                operationsFunc(operation, num: Int(num1)!, tempnum: Int(num2)!)
+                //If operation is assigned performs it when pressing on other operation key
+                operationsFunc(operation, num: Int(leftNum)!, tempnum: Int(rightNum)!)
    
             }
            
         }else{
             
             if operation == ""{
-                
+              // used to assign LHS of the operator
                 runningNumber += "\(sender.tag)"
-                num1 = runningNumber
+                leftNum = runningNumber
                 counterLbl.text = String(runningNumber)
                 
             }else{
               
-              
-              num2 += "\(sender.tag)"
-              counterLbl.text = String(num2)
+              // used to assign RHS of the operator
+              rightNum += "\(sender.tag)"
+              counterLbl.text = String(rightNum)
                
                 
             }
@@ -88,8 +91,8 @@ class ViewController: UIViewController {
       
       counterLbl.text  = performOperation(operation1, num1: num, num2: tempnum)
         runningNumber = counterLbl.text!
-        num1 = runningNumber
-        num2 = ""
+        leftNum = runningNumber
+        rightNum = ""
         operation = ""
     }
     
@@ -116,7 +119,7 @@ class ViewController: UIViewController {
          runningNumber = ""
          operation = ""
          res = ""
-         num2 = ""
+         rightNum = ""
          counterLbl.text = "0"
         
         
@@ -125,9 +128,9 @@ class ViewController: UIViewController {
     @IBAction func EqualsPressed(sender: AnyObject) {
         
         if operation != ""{
-            
+            //Equals will only work when operation variable is not empty
             playSound()
-            operationsFunc(operation, num: Int(num1)!, tempnum: Int(num2)!)
+            operationsFunc(operation, num: Int(leftNum)!, tempnum: Int(rightNum)!)
         }
         
     }
