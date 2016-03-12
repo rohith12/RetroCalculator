@@ -12,6 +12,7 @@
 		F7BEDB081C92AE3D00F90ACB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7BEDB061C92AE3D00F90ACB /* Main.storyboard */; };
 		F7BEDB0A1C92AE3D00F90ACB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7BEDB091C92AE3D00F90ACB /* Assets.xcassets */; };
 		F7BEDB0D1C92AE3D00F90ACB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7BEDB0B1C92AE3D00F90ACB /* LaunchScreen.storyboard */; };
+		F7BEDB151C92F7A100F90ACB /* btn.wav in Resources */ = {isa = PBXBuildFile; fileRef = F7BEDB141C92F7A100F90ACB /* btn.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		F7BEDB091C92AE3D00F90ACB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7BEDB0C1C92AE3D00F90ACB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7BEDB0E1C92AE3D00F90ACB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7BEDB141C92F7A100F90ACB /* btn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = btn.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				F7BEDB091C92AE3D00F90ACB /* Assets.xcassets */,
 				F7BEDB0B1C92AE3D00F90ACB /* LaunchScreen.storyboard */,
 				F7BEDB0E1C92AE3D00F90ACB /* Info.plist */,
+				F7BEDB141C92F7A100F90ACB /* btn.wav */,
 			);
 			path = RetroCalculator;
 			sourceTree = "<group>";
@@ -125,6 +128,7 @@
 				F7BEDB0D1C92AE3D00F90ACB /* LaunchScreen.storyboard in Resources */,
 				F7BEDB0A1C92AE3D00F90ACB /* Assets.xcassets in Resources */,
 				F7BEDB081C92AE3D00F90ACB /* Main.storyboard in Resources */,
+				F7BEDB151C92F7A100F90ACB /* btn.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +290,7 @@
 				F7BEDB131C92AE3D00F90ACB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
