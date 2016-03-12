@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         let path = NSBundle.mainBundle().pathForResource("btn", ofType: "wav")
         let soundUrl = NSURL(fileURLWithPath: path!)
         counterLbl.text = ""
@@ -36,10 +37,16 @@ class ViewController: UIViewController {
 
     @IBAction func NumberPressed(sender: UIButton!) {
         
-        btnSound.play()
+        playSound()
         
         if sender.tag == 50 || sender.tag == 60 || sender.tag == 70 || sender.tag == 80{
-           decideOperation(sender.tag)
+            if operation == ""{
+              decideOperation(sender.tag)
+            }else{
+                operationsFunc(operation, num: Int(num1)!, tempnum: Int(num2)!)
+   
+            }
+           
         }else{
             
             if operation == ""{
@@ -53,8 +60,8 @@ class ViewController: UIViewController {
               
               num2 += "\(sender.tag)"
               counterLbl.text = String(num2)
-                operationsFunc(operation, num: Int(num1)!, tempnum: Int(num2)!)
-                operation = ""
+               
+                
             }
         }
         
@@ -76,13 +83,14 @@ class ViewController: UIViewController {
     }
     
    
-    func operationsFunc(operation:String, num:Int, tempnum:Int){
+    func operationsFunc(operation1:String, num:Int, tempnum:Int){
         
       
-      counterLbl.text  = performOperation(operation, num1: num, num2: tempnum)
+      counterLbl.text  = performOperation(operation1, num1: num, num2: tempnum)
         runningNumber = counterLbl.text!
         num1 = runningNumber
         num2 = ""
+        operation = ""
     }
     
     
@@ -104,7 +112,7 @@ class ViewController: UIViewController {
 
     @IBAction func AC(sender: AnyObject) {
         
-         btnSound.play()
+        playSound()
          runningNumber = ""
          operation = ""
          res = ""
@@ -114,6 +122,27 @@ class ViewController: UIViewController {
         
     }
     
-
+    @IBAction func EqualsPressed(sender: AnyObject) {
+        
+        if operation != ""{
+            
+            playSound()
+            operationsFunc(operation, num: Int(num1)!, tempnum: Int(num2)!)
+        }
+        
+    }
+   
+    func playSound() {
+        
+        if btnSound.playing{
+            btnSound.stop()
+        }
+        
+        btnSound.play()
+    }
+    
+    
+    
+    
 }
 

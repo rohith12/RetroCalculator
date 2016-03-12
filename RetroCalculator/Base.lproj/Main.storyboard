@@ -287,21 +287,35 @@
                                             <constraint firstAttribute="width" constant="60" id="bCS-1h-PPZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                        <state key="normal" title="AC">
+                                        <state key="normal" title="=">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="AC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zc1-Jq-Itb"/>
+                                            <action selector="EqualsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yu1-0N-2YE"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntt-ad-HLk">
+                                <rect key="frame" x="170" y="513" width="262" height="38"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="262" id="plL-Ue-sD7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="AC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IME-ci-MKH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ntt-ad-HLk" firstAttribute="top" secondItem="pZT-xI-hUo" secondAttribute="bottom" constant="17" id="3xT-kf-s15"/>
                             <constraint firstItem="IIe-yl-wI1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HKO-nx-IbW"/>
                             <constraint firstItem="IIe-yl-wI1" firstAttribute="top" secondItem="t9p-bg-oNi" secondAttribute="bottom" constant="-144" id="Ihg-By-r63"/>
                             <constraint firstItem="jfo-nN-evV" firstAttribute="top" secondItem="eR9-Rz-TTf" secondAttribute="bottom" constant="18" id="J3p-s9-NjX"/>
+                            <constraint firstItem="ntt-ad-HLk" firstAttribute="centerX" secondItem="pZT-xI-hUo" secondAttribute="centerX" id="NfC-Fg-GbR"/>
                             <constraint firstAttribute="trailing" secondItem="2cf-GD-6h5" secondAttribute="trailing" id="OGR-Hv-0ir"/>
                             <constraint firstItem="Bn5-vR-2e2" firstAttribute="top" secondItem="jfo-nN-evV" secondAttribute="bottom" constant="14" id="PnL-Qc-GO3"/>
                             <constraint firstItem="aRb-Pf-iDs" firstAttribute="top" secondItem="Bn5-vR-2e2" secondAttribute="bottom" constant="20" id="RjY-uY-whm"/>
