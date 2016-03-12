@@ -11,10 +11,11 @@ import AVFoundation
 class ViewController: UIViewController {
 
     @IBOutlet weak var counterLbl: UILabel!
-    var number = 0
+    var runningNumber = ""
     var operation = ""
-    var res = 0
-    var num2 = 0
+    var res = "0"
+    var num2 = ""
+    var num1 = ""
     var btnSound:AVAudioPlayer!
     
     
@@ -23,7 +24,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let path = NSBundle.mainBundle().pathForResource("btn", ofType: "wav")
         let soundUrl = NSURL(fileURLWithPath: path!)
-        counterLbl.text = "0"
+        counterLbl.text = ""
         do{
             try btnSound = AVAudioPlayer(contentsOfURL: soundUrl)
         }catch let err as NSError
@@ -42,12 +43,17 @@ class ViewController: UIViewController {
         }else{
             
             if operation == ""{
-                number = sender.tag
-                counterLbl.text = String(number)
+                
+                runningNumber += "\(sender.tag)"
+                num1 = runningNumber
+                counterLbl.text = String(runningNumber)
+                
             }else{
-              num2 = sender.tag
+              
+              
+              num2 += "\(sender.tag)"
               counterLbl.text = String(num2)
-                operationsFunc(operation, num1: number, num2: num2)
+                operationsFunc(operation, num: Int(num1)!, tempnum: Int(num2)!)
                 operation = ""
             }
         }
@@ -70,13 +76,13 @@ class ViewController: UIViewController {
     }
     
    
-    func operationsFunc(operation:String, num1:Int, num2:Int){
+    func operationsFunc(operation:String, num:Int, tempnum:Int){
         
       
-      counterLbl.text  = performOperation(operation, num1: num1, num2: num2)
-        number = Int(counterLbl.text!)!
-        
-        
+      counterLbl.text  = performOperation(operation, num1: num, num2: tempnum)
+        runningNumber = counterLbl.text!
+        num1 = runningNumber
+        num2 = ""
     }
     
     
@@ -99,10 +105,10 @@ class ViewController: UIViewController {
     @IBAction func AC(sender: AnyObject) {
         
          btnSound.play()
-         number = 0
+         runningNumber = ""
          operation = ""
-         res = 0
-         num2 = 0
+         res = ""
+         num2 = ""
          counterLbl.text = "0"
         
         
